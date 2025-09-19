@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maze Runner</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+   <!-- Login/Register Screen -->
+  <div id="auth-screen" class="screen visible">
+    <div class="auth-card">
+      <h2>Login or Register</h2>
+      <input type="text" id="auth-username" placeholder="Username" />
+      <input type="password" id="auth-password" placeholder="Password" />
+      <div class="auth-buttons">
+        <button id="login-btn" class="big-btn">Login</button>
+        <button id="register-btn" class="small-btn">Register</button>
+      </div>
+      <div id="auth-message"></div>
+    </div>
+  </div>
+
+  <div class="animated-bg" id="start-bg"></div>
+  <div id="start-screen" class="screen visible">
+    <div class="start-card">
+      <h1 class="giant-title">Maze Runner</h1>
+      <p class="subtitle">Test your mind.<br>Or your machine.</p>
+      <button class="big-btn" id="start-btn">Start</button>
+    </div>
+  </div>
+  
+  <div id="menu-screen" class="screen hidden">
+    <div class="menu-card">
+      <h2>Select Game Mode</h2>
+      <button class="mode-btn" id="human-btn">Human</button>
+      <button class="mode-btn" id="ai-btn">AI</button>
+    </div>
+  </div>
+  <div id="ai-mode-screen" class="screen hidden">
+    <div class="menu-card">
+      <h2>Select AI Algorithm</h2>
+      <button class="mode-btn" id="ql-btn">Q-Learning</button>
+      <button class="mode-btn" id="sarsa-btn">SARSA</button>
+      <button class="small-btn" id="back-ai-menu">Back</button>
+    </div>
+  </div>
+  <audio id="bg-music" src="static/background.mp3" loop></audio>
+
+  <div id="game-screen" class="screen hidden">
+    <div class="top-bar">
+      <div id="score-section">
+        <span>Score:</span> <span id="score">0</span>&nbsp;&nbsp;
+        <span id="highscore-icon">🏆</span>
+        <span id="highscore">0</span>
+        <span id="highscore-msg" style="color: #0f0; font-weight: 700; font-size: 18px; margin-left: 10px; opacity: 0; transition: opacity 0.6s;">
+      Yeah! New High Score!
+        </span>
+      </div>
+    <button class="small-btn" id="reset-highscore">Reset High Score</button>
+    <button class="small-btn" id="menu-btn">Menu</button>
+  </div>
+
+    <div id="canvas-wrap">
+      <canvas id="maze-canvas"></canvas>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="result-modal">
+    <div class="modal-card">
+      <h2 id="result-title">You Won!</h2>
+      <div>
+        <span>Your score: </span><span id="result-score">0</span>
+      </div>
+      <div class="modal-actions">
+        <button id="play-again" class="mode-btn">Play Again</button>
+        <button id="back-menu" class="mode-btn">Menu</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="static/game.js"></script>
+  <audio id="bg-music" src="static/background.mp3" loop></audio>
+
+</body>
+</html>
+
